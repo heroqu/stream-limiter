@@ -1,6 +1,6 @@
 # stream-limiter
 
-A PassThrough stream that stops streaming after the specified bytes number has been passed.
+A PassThrough stream that stops streaming after the specified number of bytes has been passed.
 
 Does not support *objectMode*.
 
@@ -35,6 +35,10 @@ const sl = StreamLimiter(7)
 // pipe through it
 rs.pipe(sl).pipe(process.stdout)
 // output > Marshal     (without last 'l')
+
+// Implicit conversion to chars took place inside process.stdout,
+// but basically we have [77, 97, 114, 115, 104, 97, 108]
+// bytes sequence at the readable end of 'sl' stream here.
 ```
 
 The only constructor parameter is the ```maxBytes``` - number of bytes allowed to pass through the stream.
