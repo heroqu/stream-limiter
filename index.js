@@ -10,7 +10,7 @@ function StreamLimiter (maxBytes) {
   sl._transform = function (chunk, encoding, cb) {
     if (count >= maxBytes) {
       // the quota is over, quit
-      sl.push(null)
+      quit()
       cb()
       return
     }
@@ -30,10 +30,15 @@ function StreamLimiter (maxBytes) {
 
     if (count >= maxBytes) {
       // the quota is over, quit
-      sl.push(null)
+      quit()
     }
 
     cb()
+  }
+
+  function quit () {
+    sl.push(null)
+    sl.emit('finish')
   }
 
   return sl
