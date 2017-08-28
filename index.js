@@ -37,8 +37,8 @@ function StreamLimiter (maxBytes) {
   }
 
   function quit () {
-    sl.push(null)
-    sl.emit('finish')
+    sl.push(null)       // output stream will know we quit here
+    sl.emit('finish')   // input stream will know
   }
 
   return sl
