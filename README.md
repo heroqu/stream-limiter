@@ -36,8 +36,8 @@ const sl = StreamLimiter(7)
 rs.pipe(sl).pipe(process.stdout)
 // output > Marshal     (without last 'l')
 
-// Implicit conversion to chars took place inside process.stdout,
-// but basically we have [77, 97, 114, 115, 104, 97, 108]
+// Implicit conversion to chars took place while printing output in the
+// terminal window, but basically we have [77, 97, 114, 115, 104, 97, 108]
 // bytes sequence at the readable end of 'sl' stream here.
 ```
 
