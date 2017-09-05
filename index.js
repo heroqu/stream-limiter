@@ -15,11 +15,6 @@ function StreamLimiter (maxBytes) {
       return
     }
 
-    if (typeof chunk === 'string') {
-      // convert it to buffer
-      chunk = Buffer.from(chunk, encoding)
-    }
-
     if (chunk.length > (maxBytes - count)) {
       // Cut the chunk to respect the quota
       chunk = chunk.slice(0, maxBytes - count)

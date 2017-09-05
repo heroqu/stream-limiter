@@ -12,7 +12,7 @@ npm install stream-limiter
 
 ## Implementation details
 
-Works on bytes level, means it always count bytes and not characters, even if it is inserted into the chain of text streams.
+Always count bytes and not characters, even if it is inserted into the chain of text streams.
 
 Please note, that for text streams some characters can take more then one byte and thus can be cut off in the middle at the end of the resulting stream. This is an intentional behavior, as the exact byte size is considered to be more important here.
 
