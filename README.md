@@ -25,6 +25,7 @@ const { Readable } = require('stream')
 // Sample readable stream of 8 bytes.
 // The bytes might (but not have to) be interpreted as 8 ascii chars:
 //  'M', 'a', 'r', 's', 'h', 'a', 'l', 'l'
+// like in 'Donald Marshall'
 const rs = new Readable()
 rs.push(Buffer.from([77, 97, 114, 115, 104, 97, 108, 108]))
 rs.push(null)
