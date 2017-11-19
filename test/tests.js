@@ -1,5 +1,5 @@
 const { assert } = require('chai')
-const { Readable } = require('stream')
+const { Readable } = require('readable-stream')
 const StreamAccumulator = require('./stream_accumulator')
 const StreamLimiter = require('../')
 

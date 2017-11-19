@@ -20,12 +20,11 @@ Please note, that for text streams some characters can take more then one byte a
 
 ```javascript
 const StreamLimiter = require('stream-limiter')
-const { Readable } = require('stream')
+const { Readable } = require('stream') // or: require('readable-stream')
 
 // Sample readable stream of 8 bytes.
 // The bytes might (but not have to) be interpreted as 8 ascii chars:
 //  'M', 'a', 'r', 's', 'h', 'a', 'l', 'l'
-// like in 'Donald Marshall'
 const rs = new Readable()
 rs.push(Buffer.from([77, 97, 114, 115, 104, 97, 108, 108]))
 rs.push(null)
@@ -51,4 +50,4 @@ Any other value (like ```NaN```, or of any type other then ```Number```) will be
 
 ## Dependencies
 
-None.
+For *"a stable streams base, regardless of what version of Node you are using"* we use [readable-stream](https://www.npmjs.com/package/readable-stream) standalone stream module instead of Node core implementation (read elaboration on this [here](https://r.va.gg/2014/06/why-i-dont-use-nodes-core-stream-module.html)).

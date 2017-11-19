@@ -1,4 +1,4 @@
-const { Writable } = require('stream')
+const { Writable } = require('readable-stream')
 
 module.exports = StreamAccumulator
 
