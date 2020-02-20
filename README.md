@@ -44,10 +44,10 @@ rs.pipe(sl).pipe(process.stdout)
 
 The only constructor parameter is the ```maxBytes``` - number of bytes allowed to pass through the stream.
 
-This can be any number, including ```+Infinity```. Numbers less then 1 (e.g. 0, 0.99, -5, ```-Infinity```) are treated as zero bytes limit, thus the stream will end (and emit the 'finish' event) immediately after streaming has began.
+This can be any number, including ```+Infinity```. Numbers less then 1 (e.g. 0, 0.99, -5, ```-Infinity```) are treated as zero bytes limit, thus the stream will end (and emit the 'finish' event) immediately after the streaming has begun.
 
 Any other value (like ```NaN```, or of any type other then ```Number```) will be interpreted as ```+Infinity``` and act as if there is no limit.
 
 ## Dependencies
 
-For *"a stable streams base, regardless of what version of Node you are using"* we use [readable-stream](https://www.npmjs.com/package/readable-stream) standalone stream module instead of Node core implementation (read elaboration on this [here](https://r.va.gg/2014/06/why-i-dont-use-nodes-core-stream-module.html)).
+For a *"stable streams base, regardless of what version of Node you are using"* we use [readable-stream](https://www.npmjs.com/package/readable-stream) standalone stream module instead of Node core implementation (read elaboration on this [here](https://r.va.gg/2014/06/why-i-dont-use-nodes-core-stream-module.html)).
